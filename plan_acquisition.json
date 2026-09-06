@@ -1,0 +1,57 @@
+{
+  "objectifs": {
+    "numerique": {
+      "label": "Ressources numériques (Research4Life, DOAB/OpenStax, serveur intranet Wi-Fi)",
+      "cible": 70000,
+      "actuel": 0
+    },
+    "dons": {
+      "label": "Dons physiques (réseau FIUC + fret humanitaire)",
+      "cible": 20000,
+      "actuel": 0
+    },
+    "achats": {
+      "label": "Achats physiques ciblés (quote-part frais d'inscription + commandes groupées)",
+      "cible": 10000,
+      "actuel": 0
+    }
+  },
+  "chronogramme": [
+    {
+      "periode": "Mois 1",
+      "action": "Dépôt du dossier d'éligibilité Research4Life (Hinari, ARDI, GOALI, OARE)",
+      "responsable": "Recteur & Bibliothécaire",
+      "fait": false
+    },
+    {
+      "periode": "Mois 1",
+      "action": "Recensement des besoins précis par chef de département (Droit, Génie, Médecine, Économie)",
+      "responsable": "Bibliothécaire & Chefs de filières",
+      "fait": false
+    },
+    {
+      "periode": "Mois 2",
+      "action": "Installation du serveur Intranet local relié au Wi-Fi du campus",
+      "responsable": "Équipe Informatique",
+      "fait": false
+    },
+    {
+      "periode": "Mois 2",
+      "action": "Envoi des requêtes de dons de doublons/ouvrages spécialisés aux universités du réseau FIUC",
+      "responsable": "Relations Extérieures",
+      "fait": false
+    },
+    {
+      "periode": "Mois 3",
+      "action": "Lancement du premier téléchargement massif (DOAB, OpenStax) sur le serveur local",
+      "responsable": "Équipe Informatique & Bibliothèque",
+      "fait": false
+    },
+    {
+      "periode": "Mois 3",
+      "action": "Premier achat groupé physique financé par la quote-part des frais d'inscription",
+      "responsable": "Service Financier & Bibliothèque",
+      "fait": false
+    }
+  ]
+}
