@@ -38,6 +38,8 @@ Sur la page de votre nouveau dépôt vide :
    - **iPhone (Safari)** : bouton Partager → "Sur l'écran d'accueil"
    - **Android (Chrome)** : menu ⋮ → "Ajouter à l'écran d'accueil"
 
+L'icône `icon.png` (livre + croix, aux couleurs de l'UCKIS) sert de favicon de l'app et apparaît comme icône lors de l'ajout à l'écran d'accueil.
+
 ## 🔄 Mettre à jour le catalogue plus tard
 Toute modification faite dans l'app (ajout/suppression d'un ouvrage) est enregistrée sur le serveur Streamlit Cloud, mais **n'est pas automatiquement renvoyée vers GitHub**. Pour une mise à jour durable et versionnée : éditez `catalogue.csv` directement sur GitHub (bouton crayon ✏️ sur le fichier) puis "Commit changes" — l'app se redéploie automatiquement.
 

@@ -3,12 +3,16 @@ import os
 
 import pandas as pd
 import streamlit as st
+from PIL import Image
 
 CSV_PATH = "catalogue.csv"
 PLAN_PATH = "plan_acquisition.json"
+ICON_PATH = "icon.png"
+
+icone_page = Image.open(ICON_PATH) if os.path.exists(ICON_PATH) else "📚"
 
 st.set_page_config(
-    page_title="Bibliothèque Numérique UCKIS", page_icon="📚", layout="wide"
+    page_title="Bibliothèque Numérique UCKIS", page_icon=icone_page, layout="wide"
 )
 
 
