@@ -1,13 +1,48 @@
 import json
 import os
+import shutil
+import sys
 
 import pandas as pd
 import streamlit as st
 from PIL import Image
 
-CSV_PATH = "catalogue.csv"
-PLAN_PATH = "plan_acquisition.json"
-ICON_PATH = "icon.png"
+
+def dossier_donnees():
+    """Dossier où lire/écrire les données : à côté de l'exécutable une fois
+    packagé (persistant), ou le dossier du script en mode normal."""
+    if getattr(sys, "frozen", False):
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+def dossier_ressources():
+    """Dossier des fichiers embarqués : dossier temporaire PyInstaller une
+    fois packagé, ou le dossier du script en mode normal."""
+    if getattr(sys, "frozen", False):
+        return sys._MEIPASS
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+DATA_DIR = dossier_donnees()
+RES_DIR = dossier_ressources()
+
+
+def initialiser_fichier_donnees(nom_fichier):
+    """Copie le fichier embarqué à côté de l'exécutable au premier lancement,
+    pour que les modifications survivent aux prochains démarrages."""
+    dest = os.path.join(DATA_DIR, nom_fichier)
+    source = os.path.join(RES_DIR, nom_fichier)
+    if not os.path.exists(dest) and os.path.exists(source):
+        shutil.copy(source, dest)
+
+
+for _nom in ("catalogue.csv", "plan_acquisition.json"):
+    initialiser_fichier_donnees(_nom)
+
+CSV_PATH = os.path.join(DATA_DIR, "catalogue.csv")
+PLAN_PATH = os.path.join(DATA_DIR, "plan_acquisition.json")
+ICON_PATH = os.path.join(RES_DIR, "icon.png")
 
 icone_page = Image.open(ICON_PATH) if os.path.exists(ICON_PATH) else "📚"
 
